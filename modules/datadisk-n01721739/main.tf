@@ -1,6 +1,6 @@
 resource "azurerm_managed_disk" "data_disk" {
   count                = max(var.data_disk_count, length(var.vm_ids))
-  name                 = "${var.data_disk_name}${count.index}"
+  name                 = "${var.data_disk_name}${count.index + 1}"
   location             = var.location
   resource_group_name  = var.rg_name
   storage_account_type = "Standard_LRS"

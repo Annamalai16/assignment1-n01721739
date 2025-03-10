@@ -34,6 +34,18 @@ variable "db_admin_password" {
   default     = "admin!23"
 }
 
+variable "storage_mb" {
+  description = "The storage capacity of the PostgreSQL server."
+  type        = number
+  default     = 5120
+}
+
+variable "backup_retention_days" {
+  description = "The number of days to retain backups for the PostgreSQL server."
+  type        = number
+  default     = 7
+}
+
 variable "tags" {
   description = "Tags for the virtual machines."
   type        = map(string)

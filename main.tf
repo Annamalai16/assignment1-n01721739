@@ -108,6 +108,7 @@ module "data_disk" {
   source   = "./modules/datadisk-n01721739"
   location = "East US"
   rg_name  = module.resource_group.rg_name
+  data_disk_name = "n01721739-DD"
   vm_ids   = concat(module.vm_linux.vm_ids, module.vm_windows.vm_ids)
   tags     = local.common_tags
 }
@@ -129,5 +130,7 @@ module "database" {
   db_server_name    = "n01721739-db-svr"
   db_admin_username = "n01721739"
   db_admin_password = "dbadm!23"
+  storage_mb        = 5120
+  backup_retention_days = 7
   tags              = local.common_tags
 }

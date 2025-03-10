@@ -38,7 +38,7 @@ output "storage_account_name" {
   value       = module.common.sa_name
 }
 
-output "linux_vm_names" {
+output "linux_vm_host_names" {
   description = "The names of the linux virtual machines"
   value       = module.vm_linux.vm_hostnames
 }
@@ -63,7 +63,7 @@ output "linux_availability_set_name" {
   value       = module.vm_linux.availability_set_name
 }
 
-output "windows_vm_names" {
+output "windows_vm_host_names" {
   description = "The names of the windows virtual machines"
   value       = module.vm_windows.vm_hostnames
 }
